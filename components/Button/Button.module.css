@@ -1,0 +1,31 @@
+.button {
+  --shadow-color-on: rgb(0, 60, 109);
+  --shadow-color-off: rgb(60, 60, 60);
+  width: 60px;
+  height: 55px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: translateY(3px);
+}
+
+.button.on {
+  background: radial-gradient(rgb(0, 157, 255), rgb(113, 124, 131));
+  box-shadow: 0 5px 0 var(--shadow-color-on), 0 5px 10px rgb(0, 157, 255);
+}
+
+.button.on:active {
+  box-shadow: 0 2px 0 var(--shadow-color-on), 0 2px 4px rgb(0, 157, 255);
+}
+
+.button.off {
+  background-color: rgb(113, 124, 131);
+  box-shadow: 0 5px 0 var(--shadow-color-off);
+}
+
+.button.off:active {
+  box-shadow: 0 2px 0 var(--shadow-color-off);
+}
