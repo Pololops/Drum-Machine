@@ -1,16 +1,19 @@
-import Navbar from './Navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 
-export default function Layout({children}: LayoutProps) {
+const Layout = ({children}: LayoutProps) => {
   return (
     <>
       <header>
-        <h1>Mini Games</h1><Navbar />
+        <h1>Drum Machine</h1>
+        <Navbar />
       </header>
-      {children}
+      <main>{children}</main>
     </>
   );
-}
+};
+
+export default Layout;

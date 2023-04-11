@@ -7,19 +7,19 @@ const Navbar = () => {
     <>
       <ul className={styles.menu}>
         <li className={styles.link}>
-          <Link href="/">Accueil</Link>
+          <Link href="/">Home</Link>
+        </li>
+        <li className={styles.link}>
+          <Link href="/">About</Link>
         </li>
         <li className={`${styles.link} ${styles.linkSubmenu}`}>
-          Games
+          Drum Kits
           <SubMenu>
             <li className={`${styles.link} ${styles.sublink}`}>
-              <Link href="/games/1">Drums Pattern</Link>
+              <Link href="/games/1">Acoustic</Link>
             </li>
             <li className={`${styles.link} ${styles.sublink}`}>
-              <Link href="/games/2">Labyrinthe</Link>
-            </li>
-            <li className={`${styles.link} ${styles.sublink}`}>
-              <Link href="/games/3">Scrabble</Link>
+              <Link href="/games/2">Rock</Link>
             </li>
           </SubMenu>
         </li>

@@ -108,6 +108,10 @@ header {
   margin-inline: auto;
 }
 
+main {
+  padding-top: 60px;
+}
+
 header {
   position: fixed;
   top: 0;
