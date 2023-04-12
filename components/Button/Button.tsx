@@ -1,5 +1,12 @@
 import styles from './Button.module.css';
 
-export const Button = () => {
-  return <button className={`${styles.button} ${styles.on}`}></button>;
+type PropsButton = {
+  isActive?: boolean;
+};
+
+export const Button = ({ isActive }: PropsButton) => {
+  const stylesButton =
+    `${styles.button} ${isActive ? styles.on : styles.off}`;
+  
+  return <button className={stylesButton}></button>;
 }
