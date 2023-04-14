@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Kick",
+    "sound": "/sounds/kick.wav"
+  },
+  {
+    "title": "Snare",
+    "sound": "/sounds/snare.wav"
+  },
+  {
+    "title": "Tom",
+    "sound": "/sounds/tom.wav"
+  },
+  {
+    "title": "Hi-Hat",
+    "sound": "/sounds/hihat.wav"
+  },
+  {
+    "title": "Ride",
+    "sound": "/sounds/ride.wav"
+  },
+  {
+    "title": "Crash",
+    "sound": "/sounds/crash.wav"
+  }
+]

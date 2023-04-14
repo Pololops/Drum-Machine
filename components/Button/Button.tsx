@@ -1,12 +1,24 @@
+import {useMemo, useState} from 'react';
 import styles from './Button.module.css';
 
 type PropsButton = {
-  isActive?: boolean;
+  onClick: () => void;
 };
 
-export const Button = ({ isActive }: PropsButton) => {
-  const stylesButton =
-    `${styles.button} ${isActive ? styles.on : styles.off}`;
-  
-  return <button className={stylesButton}></button>;
-}
+const Button = ({onClick}: PropsButton) => {
+  const [isActive, setIsActive] = useState(false);
+
+  const stylesButton = `${styles.button} ${isActive ? styles.on : styles.off}`;
+
+  return (
+    <button
+      className={stylesButton}
+      onClick={() => {
+        onClick();
+        setIsActive((prevState) => !prevState);
+      }}
+    />
+  );
+};
+
+export default Button;
