@@ -4,8 +4,6 @@ type SubMenuProps = {
   children: React.ReactNode;
 };
 
-const SubMenu = ({children}: SubMenuProps) => {
+export default function SubMenu({children}: SubMenuProps) {
   return <ul className={styles.submenu}>{children}</ul>;
-};
-
-export default SubMenu;
+}

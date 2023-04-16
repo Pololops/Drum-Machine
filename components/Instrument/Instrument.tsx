@@ -1,6 +1,6 @@
 import styles from './Instrument.module.css';
 import {Button, Reset} from '../';
-import { useState } from 'react';
+import {useState} from 'react';
 
 type InstrumentProps = {
   title: string;
@@ -8,7 +8,7 @@ type InstrumentProps = {
   ticks: number;
 };
 
-const Instrument = ({title, soundUrl, ticks}: InstrumentProps) => {
+export default function Instrument({title, soundUrl, ticks}: InstrumentProps) {
   const [isReset, setIsReset] = useState(false);
 
   const audio = new Audio(soundUrl);
@@ -31,6 +31,4 @@ const Instrument = ({title, soundUrl, ticks}: InstrumentProps) => {
       <Reset onClick={handleResetClick} />
     </div>
   );
-};
-
-export default Instrument;
+}

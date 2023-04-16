@@ -2,7 +2,7 @@ import styles from './Navbar.module.css';
 import Link from 'next/link';
 import SubMenu from './SubMenu';
 
-const Navbar = () => {
+export default function Navbar() {
   return (
     <>
       <ul className={styles.menu}>
@@ -26,6 +26,4 @@ const Navbar = () => {
       </ul>
     </>
   );
-};
-
-export default Navbar;
+}

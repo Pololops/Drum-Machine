@@ -9,4 +9,5 @@
   text-align: left;
   flex-grow: 1;
   white-space: nowrap;
+  margin-right: 1rem;
 }

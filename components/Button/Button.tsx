@@ -6,7 +6,7 @@ type PropsButton = {
   isReset: boolean;
 };
 
-const Button = ({play, isReset}: PropsButton) => {
+export default function Button({play, isReset}: PropsButton) {
   const [isActive, setIsActive] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
@@ -31,6 +31,4 @@ const Button = ({play, isReset}: PropsButton) => {
       onMouseDown={handleMouseDown}
     />
   );
-};
-
-export default Button;
+}
