@@ -7,17 +7,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Drum Machine</title>
+        <title>Drum Machine — About</title>
         <meta name="description" content="A mini games website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.sequencer}>
-        <Suspense fallback={<Loading />}>
-          <Sequencer />
-        </Suspense>
-      </div>
+      <p>
+        This is a drum machine. It’s a simple app that plays a sequence of sounds
+      </p>
     </>
   );
 }

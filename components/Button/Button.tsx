@@ -1,22 +1,34 @@
-import {useMemo, useState} from 'react';
+import {useEffect, useState} from 'react';
 import styles from './Button.module.css';
 
 type PropsButton = {
-  onClick: () => void;
+  play: () => void;
+  isReset: boolean;
 };
 
-const Button = ({onClick}: PropsButton) => {
+const Button = ({play, isReset}: PropsButton) => {
   const [isActive, setIsActive] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
 
-  const stylesButton = `${styles.button} ${isActive ? styles.on : styles.off}`;
+  const isButtonLight = isActive || isPressed;
+  const stylesButton = `${styles.button} ${isButtonLight ? styles.on : ''}`;
+
+  const handleClick = () => {
+    setIsActive((prevState) => !prevState);
+  };
+  const handleMouseDown = () => {
+    if (!isActive) play();
+  };
+
+  useEffect(() => {
+    if (isReset) setIsActive(false);
+  }, [isReset]);
 
   return (
     <button
       className={stylesButton}
-      onClick={() => {
-        onClick();
-        setIsActive((prevState) => !prevState);
-      }}
+      onClick={handleClick}
+      onMouseDown={handleMouseDown}
     />
   );
 };

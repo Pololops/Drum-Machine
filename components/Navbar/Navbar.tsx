@@ -10,7 +10,7 @@ const Navbar = () => {
           <Link href="/">Home</Link>
         </li>
         <li className={styles.link}>
-          <Link href="/">About</Link>
+          <Link href="/about">About</Link>
         </li>
         <li className={`${styles.link} ${styles.linkSubmenu}`}>
           Drum Kits

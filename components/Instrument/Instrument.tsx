@@ -1,5 +1,6 @@
 import styles from './Instrument.module.css';
-import Button from '../Button/Button';
+import {Button, Reset} from '../';
+import { useState } from 'react';
 
 type InstrumentProps = {
   title: string;
@@ -8,18 +9,26 @@ type InstrumentProps = {
 };
 
 const Instrument = ({title, soundUrl, ticks}: InstrumentProps) => {
-  const handleClick = () => {
-    const audio = new Audio(soundUrl);
+  const [isReset, setIsReset] = useState(false);
+
+  const audio = new Audio(soundUrl);
+  const play = () => {
+    setIsReset(false);
+    audio.currentTime = 0;
     audio.play();
+  };
+
+  const handleResetClick = () => {
+    setIsReset(true);
   };
 
   return (
     <div className={styles.instrument}>
-      <h2>{title}</h2>
-      <audio src={soundUrl} preload="auto" />
+      <div className={styles.title}>{title}</div>
       {Array.from({length: ticks}).map((_, index) => (
-        <Button key={title + index} onClick={handleClick} />
+        <Button key={title + index} play={play} isReset={isReset} />
       ))}
+      <Reset onClick={handleResetClick} />
     </div>
   );
 };

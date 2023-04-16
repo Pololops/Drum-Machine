@@ -103,17 +103,18 @@ body {
 
 body,
 header {
-  max-width: 768px;
   padding: 20px;
   margin-inline: auto;
 }
 
 main {
   padding-top: 60px;
+  text-align: center;
 }
 
 header {
   position: fixed;
+  max-width: 768px;
   top: 0;
   left: 0;
   right: 0;
