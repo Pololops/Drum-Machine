@@ -1,12 +1,12 @@
 import {useEffect, useState} from 'react';
-import styles from './Button.module.css';
+import styles from './PadButton.module.css';
 
 type PropsButton = {
   play: () => void;
   isReset: boolean;
 };
 
-export default function Button({play, isReset}: PropsButton) {
+export default function PadButton({play, isReset}: PropsButton) {
   const [isActive, setIsActive] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 

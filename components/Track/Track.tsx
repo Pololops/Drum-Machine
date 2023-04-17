@@ -1,5 +1,5 @@
-import styles from './Instrument.module.css';
-import {Button, Reset} from '../';
+import styles from './Track.module.css';
+import {PadButton, Reset} from '..';
 import {useState} from 'react';
 
 type InstrumentProps = {
@@ -26,7 +26,7 @@ export default function Instrument({title, soundUrl, ticks}: InstrumentProps) {
     <div className={styles.instrument}>
       <div className={styles.title}>{title}</div>
       {Array.from({length: ticks}).map((_, index) => (
-        <Button key={title + index} play={play} isReset={isReset} />
+        <PadButton key={title + index} play={play} isReset={isReset} />
       ))}
       <Reset onClick={handleResetClick} />
     </div>

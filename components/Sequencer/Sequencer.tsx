@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import styles from './Sequencer.module.css';
-import {Instrument} from '..';
+import {Track} from '..';
 
 type Instrument = {
   title: string;
@@ -35,7 +35,7 @@ export default function Player() {
         <h2>{error}</h2>
       ) : (
         instruments.map(({title, sound}) => (
-          <Instrument
+          <Track
             key={title}
             title={title}
             soundUrl={sound}
