@@ -1,26 +1,26 @@
 [
   {
     "title": "Kick",
-    "sound": "/sounds/kick.wav"
+    "sound": "/sounds/kick.mp3"
   },
   {
     "title": "Snare",
-    "sound": "/sounds/snare.wav"
+    "sound": "/sounds/snare.mp3"
   },
   {
     "title": "Tom",
-    "sound": "/sounds/tom.wav"
+    "sound": "/sounds/tom.mp3"
   },
   {
     "title": "Hi-Hat",
-    "sound": "/sounds/hihat.wav"
+    "sound": "/sounds/hi-hat.mp3"
   },
   {
     "title": "Ride",
-    "sound": "/sounds/ride.wav"
+    "sound": "/sounds/ride.mp3"
   },
   {
     "title": "Crash",
-    "sound": "/sounds/crash.wav"
+    "sound": "/sounds/crash.mp3"
   }
 ]

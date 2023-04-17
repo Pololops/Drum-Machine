@@ -1,0 +1,22 @@
+.reset {
+  background-color: rgb(60, 60, 60);
+  margin-left: 1rem;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background-color: rgb(109, 109, 109);
+}
+
+.reset:before {
+  content: '⤬';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}

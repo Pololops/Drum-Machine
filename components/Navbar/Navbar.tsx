@@ -2,7 +2,7 @@ import styles from './Navbar.module.css';
 import Link from 'next/link';
 import SubMenu from './SubMenu';
 
-const Navbar = () => {
+export default function Navbar() {
   return (
     <>
       <ul className={styles.menu}>
@@ -10,7 +10,7 @@ const Navbar = () => {
           <Link href="/">Home</Link>
         </li>
         <li className={styles.link}>
-          <Link href="/">About</Link>
+          <Link href="/about">About</Link>
         </li>
         <li className={`${styles.link} ${styles.linkSubmenu}`}>
           Drum Kits
@@ -26,6 +26,4 @@ const Navbar = () => {
       </ul>
     </>
   );
-};
-
-export default Navbar;
+}
