@@ -1,0 +1,50 @@
+.ticks {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 0.5rem;
+  
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.buttons button:hover {
+  background-color: #ccc;
+}
+
+.buttons button:before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+}
+
+.decrease:before {
+  content: '-';
+}
+
+.increase:before {
+  content: '+';
+}
