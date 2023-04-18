@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import styles from '@/styles/sequencer.module.css';
-import {useState} from 'react';
+import {Suspense, useState} from 'react';
 import {Sequencer, Loading, ErrorMessage} from '@/components';
 import useDrumkit from '../hooks/useDrumkit';
 
 export default function Home() {
   const [queryString, setQueryString] = useState('rock');
-  const {drumkit, isLoading, error} = useDrumkit(queryString);
+  const {data, loading, error} = useDrumkit(queryString);
 
   return (
     <>
@@ -17,11 +17,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.sequencer}>
-        {isLoading && <Loading />}
-        {error && <ErrorMessage message={error} />}
-        {drumkit && <Sequencer instruments={drumkit} />}
-      </div>
+      {loading && <Loading />}
+      {error && <ErrorMessage message={error.message} />}
+      {data && <Sequencer instruments={data} />}
     </>
   );
 }

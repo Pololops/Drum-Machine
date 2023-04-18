@@ -3,22 +3,31 @@ import { useState, useEffect, useRef } from 'react';
 
 type Cache<T> = { [key: string]: T[] };
 
+type state = {
+  data: Instrument[] | null;
+  loading: boolean;
+  error: Error | null;
+};
+
 const useDrumkit = (queryString: string) => {
   const cache = useRef<Cache<Instrument>>({});
+  const [state, setState] = useState<state>({
+    data: null,
+    loading: true,
+    error: null,
+  });
 
-  const [drumkit, setDrumkit] = useState<Instrument[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const url = `/data/${queryString}.json`;
 
   const getDrumKit = async () => {
+    const newState = { ...state };
+
     try {
       let data;
-      
+
       if (cache.current.queryString) {
         data = cache.current.queryString;
       } else {
-        setIsLoading(true);
-        const url = `/data/${queryString}.json`;
         const response = await fetch(url);
         if (!response.ok) throw new Error('No data found!');
 
@@ -26,20 +35,20 @@ const useDrumkit = (queryString: string) => {
         cache.current.queryString = data;
       }
 
-      setDrumkit(data);
+      newState.data = data;
     } catch (error) {
-      if (error instanceof Error) setError(error.message);
-      setError('Unknown error occurred');
+      newState.error = error as Error;
     } finally {
-      setIsLoading(false);
+      newState.loading = false;
+      setState(newState);
     }
   };
 
   useEffect(() => {
-    getDrumKit()
+    getDrumKit();
   }, [queryString]);
 
-  return { drumkit, isLoading, error };
+  return state;
 }
 
 export default useDrumkit;
