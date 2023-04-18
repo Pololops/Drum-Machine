@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import styles from '@/styles/sequencer.module.css';
-import {Suspense} from 'react';
-import {Sequencer, Loading} from '@/components';
+import {useState} from 'react';
+import {Sequencer, Loading, ErrorMessage} from '@/components';
+import useDrumkit from '../hooks/useDrumkit';
 
 export default function Home() {
+  const [queryString, setQueryString] = useState('rock');
+  const {drumkit, isLoading, error} = useDrumkit(queryString);
+
   return (
     <>
       <Head>
@@ -14,9 +18,9 @@ export default function Home() {
       </Head>
 
       <div className={styles.sequencer}>
-        <Suspense fallback={<Loading />}>
-          <Sequencer />
-        </Suspense>
+        {isLoading && <Loading />}
+        {error && <ErrorMessage message={error} />}
+        {drumkit && <Sequencer instruments={drumkit} />}
       </div>
     </>
   );

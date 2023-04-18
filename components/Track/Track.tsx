@@ -1,6 +1,6 @@
 import styles from './Track.module.css';
 import {PadButton, Reset} from '..';
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 
 type InstrumentProps = {
   title: string;
@@ -11,7 +11,7 @@ type InstrumentProps = {
 export default function Instrument({title, soundUrl, ticks}: InstrumentProps) {
   const [isReset, setIsReset] = useState(false);
 
-  const audio = new Audio(soundUrl);
+  const audio = useMemo(() => new Audio(soundUrl), [soundUrl]);
   const play = () => {
     setIsReset(false);
     audio.currentTime = 0;

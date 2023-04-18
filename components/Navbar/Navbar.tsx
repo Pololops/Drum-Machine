@@ -13,7 +13,7 @@ export default function Navbar() {
           <Link href="/about">About</Link>
         </li>
         <li className={`${styles.link} ${styles.linkSubmenu}`}>
-          Drum Kits
+          Drumkits
           <SubMenu>
             <li className={`${styles.link} ${styles.sublink}`}>
               <Link href="/games/1">Acoustic</Link>
